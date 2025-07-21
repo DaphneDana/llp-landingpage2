@@ -137,24 +137,55 @@ export default function AboutUsPage() {
       <Header />
 
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-[#058DD6] to-[#1E3A8A] text-white py-24 mt-32">
+      <section className="relative bg-gray-600 text-white py-32 mt-32 overflow-hidden">
+        {/* Background geometric pattern */}
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+            <div className="w-96 h-96 border-4 border-white/20 rounded-full flex items-center justify-center">
+              <div className="w-24 h-24 bg-white/20 rounded-lg flex items-center justify-center">
+                <Building2 className="w-12 h-12 text-white/40" />
+              </div>
+            </div>
+            {/* Connecting lines */}
+            <div className="absolute top-1/2 left-0 w-32 h-0.5 bg-white/20 transform -translate-x-full -translate-y-1/2"></div>
+            <div className="absolute top-1/2 right-0 w-32 h-0.5 bg-white/20 transform translate-x-full -translate-y-1/2"></div>
+            <div className="absolute top-0 left-1/2 w-0.5 h-32 bg-white/20 transform -translate-x-1/2 -translate-y-full"></div>
+            <div className="absolute bottom-0 left-1/2 w-0.5 h-32 bg-white/20 transform -translate-x-1/2 translate-y-full"></div>
+          </div>
+        </div>
+
         <div className="max-w-6xl mx-auto px-8 relative z-10">
-          <div className="text-center">
-            {/* Breadcrumb */}
-            <div className="flex items-center justify-center space-x-2 text-sm mb-8 opacity-90">
-              <span>ホーム</span>
-              <ChevronRight className="w-4 h-4" />
-              <span className="font-semibold">会社概要</span>
+          <div className="text-left max-w-3xl">
+            {/* Section Tag */}
+            <div className="inline-block bg-[#058DD6] text-white px-4 py-2 text-sm font-bold mb-8 uppercase tracking-wider">
+              ABOUT US
             </div>
 
-            <h1 className="text-4xl lg:text-5xl font-bold mb-6">
-              会社概要
-              <span className="block text-xl lg:text-2xl font-normal mt-4 opacity-90">私たちについて</span>
+            <h1 className="text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+              信頼と革新で
+              <span className="block text-[#058DD6]">未来を創造</span>
             </h1>
-            <p className="text-xl lg:text-2xl mb-8 max-w-4xl mx-auto leading-relaxed opacity-95">
-              信頼と革新で未来を築く、政府機関専門のデジタルソリューションパートナー
+            <p className="text-xl lg:text-2xl mb-12 max-w-2xl leading-relaxed opacity-90">
+              政府機関・自治体のデジタル変革を支援する
+              <br />
+              包括的なITソリューションサービス
             </p>
-            <div className="w-24 h-1 bg-white mx-auto"></div>
+
+            <div className="flex flex-col sm:flex-row gap-4">
+              <button 
+                onClick={() => scrollToSection('philosophy')}
+                className="bg-[#058DD6] hover:bg-[#0571B8] text-white px-8 py-4 font-bold transition-all duration-300 flex items-center justify-center group"
+              >
+                企業理念を見る
+                <ChevronRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+              </button>
+              <button 
+                onClick={() => scrollToSection('profile')}
+                className="border-2 border-white text-white hover:bg-white hover:text-gray-600 px-8 py-4 font-bold transition-all duration-300 flex items-center justify-center"
+              >
+                会社概要を見る
+              </button>
+            </div>
           </div>
         </div>
       </section>
