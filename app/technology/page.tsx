@@ -18,6 +18,7 @@ import {
   Rocket,
   Zap,
   TrendingUp,
+  ChevronRight,
 } from "lucide-react"
 import InteractiveFooter from "../components/interactive-footer"
 import Header from "../components/header"
@@ -218,7 +219,7 @@ export default function TechnologyPage() {
         // Draw particle
         ctx.beginPath()
         ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2)
-        ctx.fillStyle = "#4FC3F7"
+        ctx.fillStyle = "#F59E0B"
         ctx.globalAlpha = particle.opacity
         ctx.fill()
 
@@ -232,7 +233,7 @@ export default function TechnologyPage() {
             ctx.beginPath()
             ctx.moveTo(particle.x, particle.y)
             ctx.lineTo(otherParticle.x, otherParticle.y)
-            ctx.strokeStyle = "#4FC3F7"
+            ctx.strokeStyle = "#F59E0B"
             ctx.globalAlpha = ((100 - distance) / 100) * 0.2
             ctx.lineWidth = 1
             ctx.stroke()
@@ -271,13 +272,13 @@ export default function TechnologyPage() {
       {/* Header */}
       <Header />
 
-      {/* Hero Section with Background Image */}
-      <section className="relative h-screen flex items-center justify-center overflow-hidden mt-32">
+      {/* Hero Section */}
+      <section className="relative h-screen flex items-center overflow-hidden mt-32">
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <img
-            src="/images/technology-hero.png"
-            alt="Modern technology office"
+            src="/placeholder.svg?height=1080&width=1920&text=Technology+Innovation"
+            alt="Technology innovation and digital transformation"
             className="w-full h-full object-cover"
           />
           {/* Dark Overlay */}
@@ -285,57 +286,59 @@ export default function TechnologyPage() {
         </div>
 
         {/* Animated Canvas Overlay */}
-        <canvas ref={canvasRef} className="absolute inset-0 w-full h-full z-10 opacity-80" />
+        <canvas ref={canvasRef} className="absolute inset-0 w-full h-full z-10 opacity-30" />
 
-        {/* Content */}
-        <div className="relative z-20 text-center max-w-6xl mx-auto px-8">
-          <div className="animate-fade-in-up">
-            <div className="mb-8">
-              <span className="inline-block px-6 py-3 bg-[#058DD6] bg-opacity-90 text-white text-sm font-bold tracking-wider uppercase backdrop-blur-sm">
-                Technology & Innovation
-              </span>
-            </div>
-            <h1 className="text-4xl lg:text-6xl font-bold mb-8 leading-tight text-white">
-              <span className="text-[#4FC3F7]">最先端技術で</span>
-              <br />
-              <span>未来を創造</span>
-            </h1>
-            <p className="text-xl lg:text-2xl text-gray-200 mb-12 leading-relaxed max-w-4xl mx-auto">
-              最先端技術で政府機関のデジタル変革を加速
-              <br />
-              <span className="text-[#4FC3F7] font-semibold">未来を創造する技術力</span>
-            </p>
-            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-16">
-              <button className="group bg-[#058DD6] bg-opacity-90 text-white px-10 py-5 font-bold text-lg hover:bg-opacity-100 transition-all duration-500 transform hover:-translate-y-2 flex items-center space-x-3 shadow-2xl hover:shadow-blue-500/25 backdrop-blur-sm">
-                <span>技術詳細を見る</span>
-                <ArrowRight className="w-6 h-6 group-hover:translate-x-2 transition-transform duration-300" />
-              </button>
-              <button className="group border-2 border-white text-white px-10 py-5 font-bold text-lg hover:bg-white hover:text-[#058DD6] transition-all duration-500 flex items-center space-x-3 backdrop-blur-sm">
-                <Play className="w-5 h-5" />
-                <span>デモを見る</span>
-              </button>
-            </div>
-            {/* Animation Controls */}
-            <div className="flex items-center justify-center space-x-4">
-              <button
-                onClick={() => setAnimationPlaying(!animationPlaying)}
-                className="p-3 bg-white bg-opacity-20 backdrop-blur-sm border border-white border-opacity-30 hover:bg-opacity-30 transition-all duration-300"
-              >
-                {animationPlaying ? <Pause className="w-5 h-5 text-white" /> : <Play className="w-5 h-5 text-white" />}
-              </button>
-              <span className="text-sm text-gray-200">
-                {animationPlaying ? "アニメーション停止" : "アニメーション再生"}
-              </span>
+        {/* Content Container */}
+        <div className="relative z-10 max-w-6xl mx-auto px-8 w-full">
+          <div className="max-w-3xl">
+            {/* Animated Content from Left */}
+            <div className="animate-slide-in-left">
+              <div className="mb-6">
+                <span className="inline-block px-4 py-2 bg-[#058DD6] bg-opacity-90 text-white text-sm font-semibold tracking-wide uppercase">
+                  Technology & Innovation
+                </span>
+              </div>
+              <h1 className="text-4xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+                最先端技術で
+                <br />
+                <span className="text-[#F59E0B]">未来を創造</span>
+              </h1>
+              <p className="text-xl lg:text-2xl text-gray-200 mb-8 leading-relaxed">
+                最先端技術で政府機関のデジタル変革を加速
+                <br />
+                未来を創造する技術力
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 mb-12">
+                <button className="bg-[#058DD6] text-white px-8 py-4 font-semibold text-lg hover:bg-[#0571B8] transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 flex items-center space-x-2">
+                  <span>技術詳細を見る</span>
+                  <ChevronRight className="w-5 h-5" />
+                </button>
+                <button className="border-2 border-white text-white px-8 py-4 font-semibold text-lg hover:bg-white hover:text-[#058DD6] transition-all duration-300 backdrop-blur-sm">
+                  デモを見る
+                </button>
+              </div>
+              {/* Animation Controls */}
+              <div className="flex items-center space-x-4">
+                <button
+                  onClick={() => setAnimationPlaying(!animationPlaying)}
+                  className="p-3 bg-white bg-opacity-20 backdrop-blur-sm border border-white border-opacity-30 hover:bg-opacity-30 transition-all duration-300"
+                >
+                  {animationPlaying ? <Pause className="w-5 h-5 text-white" /> : <Play className="w-5 h-5 text-white" />}
+                </button>
+                <span className="text-sm text-gray-200">
+                  {animationPlaying ? "アニメーション停止" : "アニメーション再生"}
+                </span>
+              </div>
             </div>
           </div>
         </div>
 
         {/* Scroll Indicator */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce z-20">
-          <div className="flex flex-col items-center text-[#4FC3F7]">
+        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white animate-bounce z-20">
+          <div className="flex flex-col items-center">
             <span className="text-sm mb-2">Explore Technology</span>
-            <div className="w-6 h-10 border-2 border-[#4FC3F7] rounded-full flex justify-center">
-              <div className="w-1 h-3 bg-[#4FC3F7] rounded-full mt-2 animate-pulse"></div>
+            <div className="w-6 h-10 border-2 border-white rounded-full flex justify-center">
+              <div className="w-1 h-3 bg-white rounded-full mt-2 animate-pulse"></div>
             </div>
           </div>
         </div>
@@ -345,16 +348,16 @@ export default function TechnologyPage() {
       <section className="py-20 bg-[#F8F9FA]">
         <div className="max-w-6xl mx-auto px-8">
           <div className="text-center mb-20">
-            <h2 className="text-3xl lg:text-4xl font-bold text-[#1E3A8A] mb-8">
-              <span className="text-[#058DD6]">コア</span>テクノロジー
+            <h2 className="text-3xl lg:text-4xl font-bold text-[#058DD6] mb-8">
+              コアテクノロジー
             </h2>
+            <div className="w-32 h-1 bg-[#F59E0B] mx-auto mb-8"></div>
             <p className="text-xl text-[#6B7280] max-w-4xl mx-auto leading-relaxed">
               政府機関の要求に応える最高水準の技術スタックと専門知識
             </p>
-            <div className="w-32 h-1 bg-[#058DD6] mx-auto mt-8"></div>
           </div>
 
-          {/* Technology Tabs with Enhanced Animations */}
+          {/* Technology Tabs */}
           <div className="flex flex-wrap justify-center gap-4 mb-16">
             {technologyAreas.map((area) => (
               <button
@@ -366,17 +369,14 @@ export default function TechnologyPage() {
                     : "bg-white text-[#6B7280] hover:bg-[#EFF6FF] hover:text-[#058DD6] border border-gray-200 hover:border-[#058DD6] hover:shadow-xl"
                 }`}
               >
-                {/* Animated background on hover */}
-                <div className="absolute inset-0 bg-gradient-to-r from-[#058DD6] to-[#4FC3F7] opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
                 <area.icon
                   className={`w-6 h-6 inline mr-3 transition-transform duration-300 ${
                     activeTab === area.id ? "" : "group-hover:scale-110 group-hover:rotate-12"
                   }`}
                 />
                 {area.title}
-                {/* Pulse effect for active tab */}
                 {activeTab === area.id && (
-                  <div className="absolute inset-0 bg-[#4FC3F7] opacity-20 animate-pulse"></div>
+                  <div className="absolute inset-0 bg-[#F59E0B] opacity-20 animate-pulse"></div>
                 )}
               </button>
             ))}
@@ -401,15 +401,12 @@ export default function TechnologyPage() {
                       <p className="text-xl text-[#374151] leading-relaxed">{area.description}</p>
                     </div>
 
-                    {/* Features Grid with Stagger Animation */}
+                    {/* Features Grid */}
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       {area.features.map((feature, index) => (
                         <div
                           key={index}
                           className="group bg-white p-4 border border-gray-200 hover:border-[#058DD6] hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 hover:scale-105"
-                          style={{
-                            animationDelay: `${index * 100}ms`,
-                          }}
                         >
                           <div className="flex items-center space-x-3">
                             <div className="w-3 h-3 bg-[#058DD6] rounded-full group-hover:animate-ping"></div>
@@ -421,9 +418,9 @@ export default function TechnologyPage() {
                       ))}
                     </div>
 
-                    {/* Achievements with Hover Effects */}
+                    {/* Achievements */}
                     <div className="bg-white p-6 border border-gray-200 shadow-sm hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2">
-                      <h5 className="text-lg font-bold text-[#1E3A8A] mb-4 flex items-center">
+                      <h5 className="text-lg font-bold text-[#058DD6] mb-4 flex items-center">
                         <Award className="w-5 h-5 mr-2 text-[#F59E0B] animate-bounce" />
                         主な実績
                       </h5>
@@ -443,10 +440,10 @@ export default function TechnologyPage() {
                     </div>
                   </div>
 
-                  {/* Right: Technology Stack with Enhanced Animations */}
+                  {/* Right: Technology Stack */}
                   <div className="bg-white p-8 border border-gray-200 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-1">
-                    <h4 className="text-2xl font-bold text-[#1E3A8A] mb-8 flex items-center">
-                      <Code className="w-6 h-6 mr-3 text-[#058DD6] animate-pulse" />
+                    <h4 className="text-2xl font-bold text-[#058DD6] mb-8 flex items-center">
+                      <Code className="w-6 h-6 mr-3 animate-pulse" />
                       技術スタック
                     </h4>
                     <div className="space-y-6">
@@ -480,7 +477,6 @@ export default function TechnologyPage() {
                                 transform: hoveredTech === tech.name ? "scaleY(1.2)" : "scaleY(1)",
                               }}
                             >
-                              {/* Animated shine effect */}
                               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white to-transparent opacity-30 transform -skew-x-12 animate-shimmer"></div>
                             </div>
                           </div>
@@ -492,16 +488,16 @@ export default function TechnologyPage() {
               </div>
             ))}
 
-          {/* Innovation Showcase with Enhanced Cards */}
+          {/* Innovation Showcase */}
           <div className="mt-20">
             <div className="text-center mb-16">
-              <h3 className="text-3xl lg:text-4xl font-bold text-[#1E3A8A] mb-6">
-                <span className="text-[#F59E0B]">イノベーション</span>ラボ
+              <h3 className="text-3xl lg:text-4xl font-bold text-[#058DD6] mb-6">
+                イノベーションラボ
               </h3>
+              <div className="w-24 h-1 bg-[#F59E0B] mx-auto mb-6"></div>
               <p className="text-lg text-[#6B7280] max-w-3xl mx-auto">
                 未来技術の研究開発と実証実験による継続的なイノベーション
               </p>
-              <div className="w-24 h-1 bg-[#F59E0B] mx-auto mt-6"></div>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -511,12 +507,8 @@ export default function TechnologyPage() {
                   className="group bg-white p-8 border border-gray-200 hover:border-[#058DD6] hover:shadow-2xl transition-all duration-700 transform hover:-translate-y-6 hover:rotate-1 cursor-pointer relative overflow-hidden"
                   onMouseEnter={() => setHoveredCard(innovation.id)}
                   onMouseLeave={() => setHoveredCard(null)}
-                  style={{
-                    animationDelay: `${index * 150}ms`,
-                  }}
                 >
-                  {/* Animated background gradient on hover */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-[#058DD6] to-[#4FC3F7] opacity-0 group-hover:opacity-5 transition-opacity duration-500"></div>
+                  <div className="absolute inset-0 bg-gradient-to-br from-[#058DD6] to-[#F59E0B] opacity-0 group-hover:opacity-5 transition-opacity duration-500"></div>
 
                   {/* Floating particles effect */}
                   {hoveredCard === innovation.id && (
@@ -524,7 +516,7 @@ export default function TechnologyPage() {
                       {[...Array(6)].map((_, i) => (
                         <div
                           key={i}
-                          className="absolute w-2 h-2 bg-[#4FC3F7] rounded-full animate-float"
+                          className="absolute w-2 h-2 bg-[#F59E0B] rounded-full animate-float"
                           style={{
                             left: `${Math.random() * 100}%`,
                             top: `${Math.random() * 100}%`,
@@ -539,9 +531,8 @@ export default function TechnologyPage() {
                   <div className="text-center mb-6 relative z-10">
                     <div className="w-16 h-16 bg-[#058DD6] flex items-center justify-center mx-auto mb-4 group-hover:bg-[#0571B8] transition-all duration-500 transform group-hover:scale-110 group-hover:rotate-12 relative overflow-hidden">
                       <innovation.icon className="w-8 h-8 text-white group-hover:animate-bounce" />
-                      {/* Ripple effect */}
                       {hoveredCard === innovation.id && (
-                        <div className="absolute inset-0 bg-[#4FC3F7] animate-ping opacity-30"></div>
+                        <div className="absolute inset-0 bg-[#F59E0B] animate-ping opacity-30"></div>
                       )}
                     </div>
                     <h4 className="text-xl font-bold text-[#1E3A8A] mb-2 group-hover:text-[#058DD6] transition-colors duration-300">
@@ -550,7 +541,6 @@ export default function TechnologyPage() {
                     <p className="text-[#6B7280] text-sm leading-relaxed mb-2 group-hover:text-[#374151] transition-colors duration-300">
                       {innovation.description}
                     </p>
-                    {/* Additional details on hover */}
                     <div
                       className={`text-xs text-[#058DD6] font-medium transition-all duration-500 transform ${
                         hoveredCard === innovation.id ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
@@ -574,7 +564,6 @@ export default function TechnologyPage() {
                         className="h-full bg-[#058DD6] transition-all duration-1000 relative group-hover:bg-[#0571B8]"
                         style={{ width: `${innovation.progress}%` }}
                       >
-                        {/* Animated progress shine */}
                         <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white to-transparent opacity-50 transform -skew-x-12 animate-shimmer"></div>
                       </div>
                     </div>
@@ -584,19 +573,19 @@ export default function TechnologyPage() {
                     <span
                       className={`inline-block px-3 py-1 text-xs font-semibold transition-all duration-300 transform group-hover:scale-105 ${
                         innovation.status === "導入済み"
-                          ? "bg-green-100 text-green-800 group-hover:bg-green-200"
+                          ? "bg-[#EFF6FF] text-[#058DD6] group-hover:bg-[#DBEAFE]"
                           : innovation.status === "実証実験"
-                            ? "bg-blue-100 text-blue-800 group-hover:bg-blue-200"
+                            ? "bg-[#FFF7ED] text-[#F59E0B] group-hover:bg-[#FED7AA]"
                             : innovation.status === "開発中"
-                              ? "bg-yellow-100 text-yellow-800 group-hover:bg-yellow-200"
-                              : "bg-purple-100 text-purple-800 group-hover:bg-purple-200"
+                              ? "bg-[#EFF6FF] text-[#058DD6] group-hover:bg-[#DBEAFE]"
+                              : "bg-[#FFF7ED] text-[#F59E0B] group-hover:bg-[#FED7AA]"
                       }`}
                     >
                       {innovation.status}
                     </span>
                   </div>
 
-                  {/* Hover overlay with additional info */}
+                  {/* Hover overlay */}
                   <div
                     className={`absolute inset-0 bg-[#058DD6] bg-opacity-95 flex items-center justify-center transition-all duration-500 transform ${
                       hoveredCard === innovation.id ? "opacity-100 scale-100" : "opacity-0 scale-95 pointer-events-none"
@@ -653,6 +642,17 @@ export default function TechnologyPage() {
       )}
 
       <style jsx>{`
+        @keyframes slide-in-left {
+          from {
+            opacity: 0;
+            transform: translateX(-100px);
+          }
+          to {
+            opacity: 1;
+            transform: translateX(0);
+          }
+        }
+
         @keyframes fade-in-up {
           from {
             opacity: 0;
@@ -693,20 +693,8 @@ export default function TechnologyPage() {
           }
         }
 
-        .animate-fade-in-up {
-          animation: fade-in-up 1s ease-out;
-        }
-
-        .animate-fade-in {
-          animation: fade-in 0.5s ease-out;
-        }
-
-        .animate-shimmer {
-          animation: shimmer 2s infinite;
-        }
-
-        .animate-float {
-          animation: float 3s ease-in-out infinite;
+        .animate-slide-in-left {
+          animation: slide-in-left 1s ease-out;
         }
 
         .animate-fade-in-up {

@@ -197,7 +197,7 @@ export default function ProjectsPage() {
               <h1 className="text-4xl lg:text-6xl font-bold text-white mb-6 leading-tight">
                 実績と
                 <br />
-                <span className="text-[#4FC3F7]">信頼の証</span>
+                <span className="text-[#F59E0B]">信頼の証</span>
               </h1>
               <p className="text-xl lg:text-2xl text-gray-200 mb-8 leading-relaxed">
                 全国47都道府県での豊富な実績
@@ -252,22 +252,22 @@ export default function ProjectsPage() {
               <div className="text-sm text-[#6B7280]">完了プロジェクト</div>
             </div>
             <div className="bg-white p-8 text-center shadow-lg hover:shadow-xl transition-all duration-300">
-              <div className="w-16 h-16 bg-[#FEF3C7] flex items-center justify-center mx-auto mb-4">
+              <div className="w-16 h-16 bg-[#FFF7ED] flex items-center justify-center mx-auto mb-4">
                 <MapPin className="w-8 h-8 text-[#F59E0B]" />
               </div>
               <div className="text-3xl font-bold text-[#058DD6] mb-2">47</div>
               <div className="text-sm text-[#6B7280]">都道府県実績</div>
             </div>
             <div className="bg-white p-8 text-center shadow-lg hover:shadow-xl transition-all duration-300">
-              <div className="w-16 h-16 bg-[#FEE2E2] flex items-center justify-center mx-auto mb-4">
-                <Users className="w-8 h-8 text-[#DC2626]" />
+              <div className="w-16 h-16 bg-[#EFF6FF] flex items-center justify-center mx-auto mb-4">
+                <Users className="w-8 h-8 text-[#058DD6]" />
               </div>
               <div className="text-3xl font-bold text-[#058DD6] mb-2">1000+</div>
               <div className="text-sm text-[#6B7280]">プロジェクトメンバー</div>
             </div>
             <div className="bg-white p-8 text-center shadow-lg hover:shadow-xl transition-all duration-300">
-              <div className="w-16 h-16 bg-[#ECFDF5] flex items-center justify-center mx-auto mb-4">
-                <TrendingUp className="w-8 h-8 text-[#10B981]" />
+              <div className="w-16 h-16 bg-[#FFF7ED] flex items-center justify-center mx-auto mb-4">
+                <TrendingUp className="w-8 h-8 text-[#F59E0B]" />
               </div>
               <div className="text-3xl font-bold text-[#058DD6] mb-2">98%</div>
               <div className="text-sm text-[#6B7280]">顧客満足度</div>
@@ -333,7 +333,7 @@ export default function ProjectsPage() {
                   <div className="absolute top-4 left-4">
                     <span
                       className={`px-3 py-1 text-xs font-semibold ${
-                        project.status === "completed" ? "bg-green-500 text-white" : "bg-blue-500 text-white"
+                        project.status === "completed" ? "bg-[#058DD6] text-white" : "bg-[#F59E0B] text-white"
                       }`}
                     >
                       {project.status === "completed" ? "完了" : "進行中"}
@@ -389,7 +389,7 @@ export default function ProjectsPage() {
                     <div className="space-y-2">
                       {project.achievements.slice(0, 3).map((achievement, index) => (
                         <div key={index} className="flex items-center space-x-2">
-                          <CheckCircle className="w-4 h-4 text-[#10B981] flex-shrink-0" />
+                          <CheckCircle className="w-4 h-4 text-[#F59E0B] flex-shrink-0" />
                           <span className="text-sm text-[#374151]">{achievement}</span>
                         </div>
                       ))}
