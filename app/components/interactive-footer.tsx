@@ -74,7 +74,7 @@ export default function InteractiveFooter() {
         }}
       >
         <video ref={videoRef} className="w-full h-full object-cover" muted loop playsInline preload="metadata">
-          <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" type="video/mp4" />
+          <source src="/sample.mp4" type="video/mp4" />
           {/* Fallback background */}
           <div className="w-full h-full bg-gradient-to-br from-[#058DD6] to-[#4A90E2]"></div>
         </video>
