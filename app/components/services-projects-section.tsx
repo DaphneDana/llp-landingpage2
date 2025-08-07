@@ -18,6 +18,8 @@ import {
   Target,
   ArrowRight,
   Building2,
+  Quote,
+  Star,
 } from "lucide-react"
 
 export default function ServicesProjectsSection() {
@@ -33,6 +35,7 @@ export default function ServicesProjectsSection() {
     { id: "history", label: "沿革", title: "History" },
     { id: "services", label: "サービス", title: "Services" },
     { id: "projects", label: "実績・プロジェクト", title: "Projects & Results" },
+    { id: "testimonials", label: "お客様の声", title: "Testimonials" },
     { id: "contact", label: "アクセス・営業所情報", title: "Contact & Access" },
   ]
 
@@ -662,6 +665,76 @@ export default function ServicesProjectsSection() {
                 <span>すべての実績を見る</span>
                 <ArrowRight className="w-4 h-4" />
               </button>
+            </div>
+          </div>
+
+          {/* Testimonials Section */}
+          <div id="testimonials" className="mb-16">
+            <div className="mb-8">
+              <h2 className="text-3xl font-bold text-[#058DD6] mb-4">お客様の声</h2>
+              <div className="w-16 h-1 bg-[#058DD6]"></div>
+            </div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+              <div className="bg-white p-6 shadow-lg">
+                <Quote className="w-8 h-8 text-[#058DD6] mb-3 opacity-50" />
+                <p className="text-[#374151] mb-4 text-sm leading-relaxed">
+                  「システム統合により業務効率が大幅に向上し、職員の生産性が40%改善されました。」
+                </p>
+                <div className="flex items-center space-x-3">
+                  <div className="w-10 h-10 bg-[#058DD6] rounded-full flex items-center justify-center">
+                    <span className="text-white font-bold text-sm">A</span>
+                  </div>
+                  <div>
+                    <p className="font-semibold text-[#1E3A8A] text-sm">A県 情報政策課長</p>
+                    <div className="flex mt-1">
+                      {[...Array(5)].map((_, i) => (
+                        <Star key={i} className="w-3 h-3 text-[#F59E0B] fill-current" />
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-white p-6 shadow-lg">
+                <Quote className="w-8 h-8 text-[#058DD6] mb-3 opacity-50" />
+                <p className="text-[#374151] mb-4 text-sm leading-relaxed">
+                  「セキュリティ面での専門性が高く、政府標準準拠で安心してシステム運用できています。」
+                </p>
+                <div className="flex items-center space-x-3">
+                  <div className="w-10 h-10 bg-[#058DD6] rounded-full flex items-center justify-center">
+                    <span className="text-white font-bold text-sm">B</span>
+                  </div>
+                  <div>
+                    <p className="font-semibold text-[#1E3A8A] text-sm">B市 IT推進室長</p>
+                    <div className="flex mt-1">
+                      {[...Array(5)].map((_, i) => (
+                        <Star key={i} className="w-3 h-3 text-[#F59E0B] fill-current" />
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-white p-6 shadow-lg">
+                <Quote className="w-8 h-8 text-[#058DD6] mb-3 opacity-50" />
+                <p className="text-[#374151] mb-4 text-sm leading-relaxed">
+                  「市民サービスのデジタル化により、窓口業務効率化と市民満足度向上を実現できました。」
+                </p>
+                <div className="flex items-center space-x-3">
+                  <div className="w-10 h-10 bg-[#058DD6] rounded-full flex items-center justify-center">
+                    <span className="text-white font-bold text-sm">C</span>
+                  </div>
+                  <div>
+                    <p className="font-semibold text-[#1E3A8A] text-sm">C省 デジタル推進本部</p>
+                    <div className="flex mt-1">
+                      {[...Array(5)].map((_, i) => (
+                        <Star key={i} className="w-3 h-3 text-[#F59E0B] fill-current" />
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
 
