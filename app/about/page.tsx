@@ -171,7 +171,7 @@ export default function AboutUsPage() {
               包括的なITソリューションサービス
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4">
+            <div className="flex flex-col sm:flex-row gap-4"> 
               <button 
                 onClick={() => scrollToSection('philosophy')}
                 className="bg-[#058DD6] hover:bg-[#0571B8] text-white px-8 py-4 font-bold transition-all duration-300 flex items-center justify-center group"
